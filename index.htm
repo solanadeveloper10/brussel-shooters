@@ -5,12 +5,12 @@
 <head>
   <meta charset="utf-8">
   <title>$METRO</title>
-  <meta content="Our only goal is to be the top insight plug in the game. No cap." name="description">
+  <meta content="Men in balaclavas opened fire with AK47 in the Brussels metro station." name="description">
   <meta content="$METRO" property="og:title">
-  <meta content="Our only goal is to be the top insight plug in the game. No cap." property="og:description">
+  <meta content="Men in balaclavas opened fire with AK47 in the Brussels metro station." property="og:description">
   <meta content="6601cdccdf8fec1ddc63252e\european-union-belgium.png" property="og:image">
   <meta content="$METRO" property="twitter:title">
-  <meta content="Our only goal is to be the top insight plug in the game. No cap." property="twitter:description">
+  <meta content="Men in balaclavas opened fire with AK47 in the Brussels metro station." property="twitter:description">
   <meta content="6601cdccdf8fec1ddc63252e\european-union-belgium.pngg" property="twitter:image">
   <meta property="og:type" content="website">
   <meta content="summary_large_image" name="twitter:card">
@@ -43,14 +43,14 @@
   <meta property="og:url" content="https://trumpinside.com">
   <meta property="og:type" content="website">
   <meta property="og:title" content="$METRO">
-  <meta property="og:description" content="Our only goal is to be the top insight plug in the game. No cap.">
+  <meta property="og:description" content="Men in balaclavas opened fire with AK47 in the Brussels metro station.">
   <meta property="og:image" content="">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://trumpinside.com">
   <meta name="twitter:title" content="$METRO">
-  <meta name="twitter:description" content="Our only goal is to be the top insight plug in the game. No cap.">
+  <meta name="twitter:description" content="Men in balaclavas opened fire with AK47 in the Brussels metro station.">
   <meta name="twitter:image" content="">
 </head>
 
@@ -64,7 +64,8 @@
         <h2 data-effect10="" data-splitting="" class="content__title limited-mobile"><span class="font-3">Brussels
             Shooters</span>
         </h2>
-        <div class="text-block-2">CA: trumpdJmqbcytBWLYbtY8Mf6BR8azw4Ht3sZbsY25v3</div>
+        <div class="text-block-2" id="contract-block" style="cursor: pointer;">CA: <span
+            id="contract">trumpdJmqbcytBWLYbtY8Mf6BR8azw4Ht3sZbsY25v3</span></div>
         <div class="button-group">
           <a data-w-id="04231cf8-3ff9-618c-d762-053c17db17e9" style="background-color:rgba(0,0,0,0.4)"
             href="https://raydium.io/swap/?inputMint=sol&outputMint=trumpdJmqbcytBWLYbtY8Mf6BR8azw4Ht3sZbsY25v3"
@@ -157,7 +158,23 @@
   <script src="splitting%401.1.0/dist/splitting.min.js"></script>
   <script src="script.js"></script>
 
-  <!-- Full code available on CodeSandbox: https://shorturl.at/ijCSV -->
+  <script>
+    document.getElementById("contract-block").addEventListener("click", function () {
+      const textElement = document.getElementById("contract");
+      const originalText = textElement.textContent; // Store original text
+
+      // Copy text to clipboard
+      navigator.clipboard.writeText(originalText).then(() => {
+        textElement.textContent = "Copied!"; // Change text to "Copied!"
+
+        setTimeout(() => {
+          textElement.textContent = originalText; // Revert after 2 seconds
+        }, 2000);
+      }).catch(err => {
+        console.error("Failed to copy text: ", err);
+      });
+    });
+  </script>
 </body>
 
 </html>
